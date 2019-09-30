@@ -40,13 +40,28 @@ class Solution {
                 }
             }
             else {
-                q.add(Character.getNumericValue(command.charAt(2)));
-                count--;
+                int page = Character.getNumericValue(command.charAt(2));
+                if (page <= (count+q.size())) {
+                    q.add(page);
+                    count--;
+                }
             }
         }
         out.println(count);
         out.flush();
     } 
+
+    // 10
+    // A
+    // R 1
+    // A
+    // A
+    // A
+    // R 3
+    // R 1
+    // R 2
+    // A
+    // R 3
 
     public static void main(String args[]) {
 
